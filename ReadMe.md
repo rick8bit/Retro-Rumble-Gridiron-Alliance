@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="style.css">
+
 <p align="center">
   <img src="20250624_172803.jpg" width="90%">
 </p>
