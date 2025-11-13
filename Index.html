@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Retro Rumble Gridiron Alliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --accent: #ff4dd8;
+      --accent2: #3b82f6;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #000000;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+    .wrapper {
+      max-width: 960px;
+      width: 100%;
+      padding: 24px 16px 48px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 1.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .banner {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--accent2);
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent2);
+      margin-bottom: 8px;
+    }
+    .section p {
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+    .tagline {
+      margin-top: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Retro Rumble Gridiron Alliance</h1>
+      <div class="banner">
+        <img src="20250624_172803.jpg" alt="Retro Rumble Gridiron Alliance">
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Welcome</h2>
+      <p>
+        Like wrestling? Retro games, shows, and movies? Football?
+        This is an alliance built for fans of wrestling, football, and retro gaming.
+        Here you can listen to wrestling podcasts, watch football shows, and play
+        throwback-style games—all in one place. Welcome to the Retro Rumble
+        Gridiron Alliance.
+      </p>
+      <p class="tagline">
+        Suplexes. Pixels. Pick-sixes. Are you ready?
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Play</h2>
+      <p>
+        A playable version of UFL Legends 25 and other retro-style football
+        experiences will live here soon.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Podcasts</h2>
+      <p>
+        This will be the home for featured wrestling and football podcasts from
+        the Retro Rumble Gridiron Alliance. Links and embeds coming soon.
+      </p>
+    </section>
+
+    <footer>
+      &copy; <span id="year"></span> Retro Rumble Gridiron Alliance · No lead is safe.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
