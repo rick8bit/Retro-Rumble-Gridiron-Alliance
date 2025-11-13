@@ -1,0 +1,30 @@
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ff66cc; /* hot pink default */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 12px; /* curved corners */
+  transition: 0.2s ease-in-out;
+}
+
+/* Hover effect - hot pink glow */
+.nav-links a:hover {
+  background-color: #ff66cc;
+  color: black;
+}
+
+/* Active page - lime neon pill */
+.nav-links a.active {
+  background-color: #32ff7e; /* neon lime green */
+  color: black;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
