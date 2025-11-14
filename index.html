@@ -1,377 +1,224 @@
-      <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Retro Rumble Gridiron Alliance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Pixel font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+
   <style>
-    :root {
-      --accent: #ff4dd8;
-      --accent2: #3b82f6;
-      --accent3: #22c55e;
-      --bg: #000000;
-      --panel: #050713;
-    }
+    /* Base */
     * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
+      padding: 0;
+      background-color: #000000;
       color: #ffffff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: "Press Start 2P", monospace;
+      text-align: center;
     }
 
-    /* top nav – retro bar */
-    .nav {
+    /* Nav */
+    nav {
+      background-color: #000000;
+      border-bottom: 2px solid #111827;
+      padding: 16px 0;
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: #020308;
-      border-bottom: 2px solid var(--accent2);
-      box-shadow: 0 0 12px rgba(0,0,0,0.8);
+      z-index: 10;
     }
-    .nav-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 12px;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-    .nav-left {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    .nav-chip {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--accent2);
-      background: linear-gradient(90deg, #111827, #020617);
-    }
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-    .nav-links a {
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    .nav-links a:hover {
-      background: rgba(59,130,246,0.2);
-    }
-    .nav-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      padding: 4px 8px;
-      border-radius: 4px;
-      border: 1px solid var(--accent3);
-      color: var(--accent3);
-      background: #022c22;
-      white-space: nowrap;
-    }
-
-    .wrapper {
-      max-width: 960px;
-      width: 100%;
-      padding: 24px 16px 48px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 24px;
-      margin-top: 12px;
-    }
-    header h1 {
-      margin: 0 0 12px;
-      font-size: 2rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .banner {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 2px solid var(--accent2);
-      margin: 0 auto;
-      max-width: 900px;
-      background: #020617;
-    }
-    .banner img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .section {
-      margin-top: 36px;
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
-      border-radius: 16px;
-      padding: 18px 16px 20px;
-      border: 1px solid #1f2937;
-      box-shadow: 0 0 25px rgba(0,0,0,0.8);
-    }
-    .section:not(:first-of-type) {
-      border-top: 1px solid rgba(148,163,184,0.3);
-    }
-    .section h2 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent2);
-      margin-bottom: 10px;
-    }
-    .section p {
-      line-height: 1.7;
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
-    .tagline {
-      margin-top: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-
-    /* play section */
-    .play-layout {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    @media (min-width: 768px) {
-      .play-layout {
-        flex-direction: row;
-      }
-    }
-    .play-copy {
-      flex: 1;
-    }
-    .play-panel {
-      flex: 1;
-      background: #020617;
-      border-radius: 12px;
-      border: 1px solid #1f2937;
-      padding: 12px;
-    }
-    .play-button {
+    nav ul li {
       display: inline-block;
-      margin-top: 12px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 2px solid var(--accent2);
-      background: #020617;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #e5e7eb;
+      margin: 0 10px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #cccccc;
+      font-size: 10px;
+      padding: 8px 14px;
+      border-radius: 16px;
+      transition: 0.25s;
+    }
+    nav ul li a:hover {
+      background-color: #ff66cc; /* hot pink hover */
+      color: #000000;
+    }
+    nav ul li a.active {
+      background-color: #39ff14; /* lime active */
+      color: #000000;
+      border-radius: 18px;
+    }
+
+    /* Headings – white pixel with neon blue glow */
+    h1, h2, h3 {
+      color: #ffffff;
+      text-shadow:
+        0 0 4px #3b82f6,
+        0 0 8px #3b82f6,
+        0 0 12px #3b82f6;
+      letter-spacing: 2px;
+    }
+
+    /* Title block */
+    .title {
+      margin-top: 32px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* Main image */
+    .main-image {
+      margin-top: 20px;
+    }
+    .main-image img {
+      width: 85%;
+      max-width: 500px;
+      border: 3px solid #1e4bff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(30,75,255,0.5);
+    }
+
+    /* Sections */
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .body-text {
+      width: 85%;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 10px;
+    }
+
+    /* Play section */
+    .play-title {
+      margin-top: 40px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+    .play-section {
+      width: 85%;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+    }
+    .play-btn {
+      background-color: #000000;
+      border: 3px solid #3b82f6;
+      padding: 12px 20px;
+      font-family: "Press Start 2P", monospace;
+      color: #ffffff;
+      font-size: 10px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: 0.25s;
     }
-    .play-button:hover {
-      background: linear-gradient(90deg, rgba(59,130,246,0.25), rgba(168,85,247,0.25));
+    .play-btn:hover {
+      background-color: #3b82f6;
+      color: #000000;
     }
-    .game-shell {
+    .game-frame {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #000;
-      border-radius: 8px;
-      border: 2px solid #4b5563;
+      max-width: 500px;
+      height: 260px;
+      margin: 20px auto 0 auto;
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      color: #9ca3af;
-      text-align: center;
-      padding: 8px;
+    }
+    .placeholder-text {
+      color: #aaaaaa;
+      font-size: 9px;
     }
 
-    /* lists / creators / links */
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #d1d5db;
-      background: #030712;
-    }
-    .pill.highlight {
-      border-color: var(--accent3);
-      color: var(--accent3);
-    }
-    .link-list {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-      font-size: 0.9rem;
-    }
-    .link-list li {
-      margin-bottom: 6px;
-    }
-    .link-list a {
-      color: #93c5fd;
-    }
-    .link-list a:hover {
-      text-decoration: underline;
+    /* Tagline */
+    .tagline {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      font-size: 11px;
+      color: #ff33cc;
+      text-shadow:
+        0 0 4px #ec4899,
+        0 0 8px #ec4899;
     }
 
-    footer {
-      margin: 32px 0 8px;
-      font-size: 0.75rem;
-      opacity: 0.7;
-      text-align: center;
-      color: #9ca3af;
+    @media (min-width: 768px) {
+      nav ul li {
+        margin: 0 16px;
+      }
+      nav ul li a {
+        font-size: 11px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Retro nav bar -->
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="nav-left">
-        <span class="nav-chip">RRGA</span>
-        <span>ALT FOOTBALL • RETRO VIBES</span>
-      </div>
-      <div class="nav-links">
-        <a href="#top">Home</a>
-        <a href="#play">Play</a>
-        <a href="podcasts.html">Podcasts</a>
-        <a href="#creators">Creators</a>
-        <a href="#links">Links</a>
-      </div>
-      <div class="nav-tag">RICK8BIT</div>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="#play">PLAY</a></li>
+      <li><a href="podcasts.html">PODCASTS</a></li>
+      <li><a href="watch.html">WATCH</a></li>
+      <li><a href="links.html">LINKS</a></li>
+    </ul>
+  </nav>
+
+  <!-- TITLE -->
+  <h1 class="title">
+    RETRO RUMBLE<br>
+    GRIDIRON<br>
+    ALLIANCE
+  </h1>
+
+  <!-- MAIN IMAGE -->
+  <div class="main-image">
+    <img src="20250624_172803.jpg" alt="Retro Rumble Gridiron Alliance">
+  </div>
+
+  <!-- WELCOME SECTION -->
+  <h2 class="section-title">WELCOME</h2>
+  <p class="body-text">
+    Like wrestling? Retro games, shows, and movies? Football?<br>
+    This is an alliance built for fans of wrestling, football, and retro gaming.<br>
+    Here you can listen to wrestling podcasts, watch football shows, and play
+    throwback-style games—all in one place.<br>
+    Welcome to the Retro Rumble Gridiron Alliance.
+  </p>
+
+  <!-- PLAY SECTION -->
+  <h2 class="play-title" id="play">PLAY</h2>
+  <div class="play-section">
+    <button class="play-btn">
+      PLAY RRGA FOOTBALL
+    </button>
+
+    <div class="game-frame">
+      <p class="placeholder-text">
+        Game window placeholder. UFL / RRGA football will appear here once the web build is ready.
+      </p>
     </div>
   </div>
 
-  <div class="wrapper" id="top">
-    <header>
-      <h1>Retro Rumble Gridiron Alliance</h1>
-      <div class="banner">
-        <img src="20250624_172803.jpg" alt="Retro Rumble Gridiron Alliance">
-      </div>
-    </header>
+  <!-- TAGLINE -->
+  <h2 class="tagline">
+    SUPLEXES. PIXELS. PICK-SIXES.<br>
+    ARE YOU READY?
+  </h2>
 
-    <!-- Welcome -->
-    <section class="section">
-      <h2>Welcome</h2>
-      <p>
-        Like wrestling? Retro games, shows, and movies? Football?
-        This is an alliance built for fans of wrestling, football, and retro gaming.
-        Here you can listen to wrestling podcasts, watch football shows, and play
-        throwback-style games—all in one place. Welcome to the Retro Rumble
-        Gridiron Alliance.
-      </p>
-      <p class="tagline">
-        Suplexes. Pixels. Pick-sixes. Are you ready?
-      </p>
-    </section>
-
-    <!-- Play section -->
-    <section class="section" id="play">
-      <h2>Play</h2>
-      <div class="play-layout">
-        <div class="play-copy">
-          <p>
-            UFL Legends 25 is a custom-built, Tecmo-inspired alt-football experience:
-            three leagues, wild rules, and no lead is safe. Once the browser build is ready,
-            you’ll be able to play it right here—no downloads, just pure chaos football.
-          </p>
-          <button class="play-button" onclick="document.getElementById('game-shell').scrollIntoView({behavior:'smooth'});">
-            Play UFL Legends 25
-          </button>
-          <p style="margin-top:10px;font-size:0.8rem;color:#9ca3af;">
-            Controls and emulator info will appear here when the web version goes live.
-          </p>
-        </div>
-        <div class="play-panel">
-          <div id="game-shell" class="game-shell">
-            Game window placeholder. This box is where the NES emulator will load
-            UFL Legends 25 once we hook it up.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Podcasts -->
-    <section class="section" id="podcasts">
-      <h2>Podcasts</h2>
-      <p>
-        This hub will showcase featured wrestling and football podcasts from the RRGA
-        family, including your brother’s show. You’ll be able to play episodes right
-        from the page via Spotify, YouTube, or your favorite platform.
-      </p>
-      <div class="pill-list">
-        <span class="pill highlight">Wrestling Talk</span>
-        <span class="pill">Alt Football Deep Dives</span>
-        <span class="pill">Retro Game Chats</span>
-      </div>
-    </section>
-
-    <!-- Shows / Games / Creators -->
-    <section class="section" id="creators">
-      <h2>Games &amp; Creators</h2>
-      <p>
-        Retro Rumble Gridiron Alliance is about lifting up creators who love the same
-        things you do: suplexes, pixels, and pick-sixes. This section will highlight
-        featured ROM hacks, overlays, art, and channels from the community.
-      </p>
-      <div class="pill-list">
-        <span class="pill">UFL Legends 25</span>
-        <span class="pill">Retro Rumble Specials</span>
-        <span class="pill">Creator Spotlights</span>
-        <span class="pill">Alt-League Archives</span>
-      </div>
-    </section>
-
-    <!-- Links -->
-    <section class="section" id="links">
-      <h2>Links</h2>
-      <p>
-        Connect with RRGA and the extended alt-football &amp; retro community:
-      </p>
-      <ul class="link-list">
-        <li><a href="#" target="_blank" rel="noreferrer">YouTube – Rick8bit / AFN</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">X (Twitter) – RRGA / Alt Football</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">Facebook Group – Retro Rumble Gridiron Alliance</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">TBD – Wrestling Podcast Link</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      &copy; <span id="year"></span> Retro Rumble Gridiron Alliance · No lead is safe.
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
