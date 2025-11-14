@@ -5,165 +5,11 @@
   <title>Retro Rumble Gridiron Alliance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Pixel font -->
+  <!-- Pixel font for headings only -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 
-  <style>
-    /* Base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000000;
-      color: #ffffff;
-      font-family: "Press Start 2P", monospace;
-      text-align: center;
-    }
-
-    /* Nav */
-    nav {
-      background-color: #000000;
-      border-bottom: 2px solid #111827;
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0 10px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #cccccc;
-      font-size: 10px;
-      padding: 8px 14px;
-      border-radius: 16px;
-      transition: 0.25s;
-    }
-    nav ul li a:hover {
-      background-color: #ff66cc; /* hot pink hover */
-      color: #000000;
-    }
-    nav ul li a.active {
-      background-color: #39ff14; /* lime active */
-      color: #000000;
-      border-radius: 18px;
-    }
-
-    /* Headings – white pixel with neon blue glow */
-    h1, h2, h3 {
-      color: #ffffff;
-      text-shadow:
-        0 0 4px #3b82f6,
-        0 0 8px #3b82f6,
-        0 0 12px #3b82f6;
-      letter-spacing: 2px;
-    }
-
-    /* Title block */
-    .title {
-      margin-top: 32px;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    /* Main image */
-    .main-image {
-      margin-top: 20px;
-    }
-    .main-image img {
-      width: 85%;
-      max-width: 500px;
-      border: 3px solid #1e4bff;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(30,75,255,0.5);
-    }
-
-    /* Sections */
-    .section-title {
-      margin-top: 40px;
-      margin-bottom: 16px;
-      font-size: 14px;
-    }
-
-    .body-text {
-      width: 85%;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-      font-size: 10px;
-    }
-
-    /* Play section */
-    .play-title {
-      margin-top: 40px;
-      margin-bottom: 18px;
-      font-size: 14px;
-    }
-    .play-section {
-      width: 85%;
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-    }
-    .play-btn {
-      background-color: #000000;
-      border: 3px solid #3b82f6;
-      padding: 12px 20px;
-      font-family: "Press Start 2P", monospace;
-      color: #ffffff;
-      font-size: 10px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-    .play-btn:hover {
-      background-color: #3b82f6;
-      color: #000000;
-    }
-    .game-frame {
-      width: 100%;
-      max-width: 500px;
-      height: 260px;
-      margin: 20px auto 0 auto;
-      border: 2px solid #3b82f6;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .placeholder-text {
-      color: #aaaaaa;
-      font-size: 9px;
-    }
-
-    /* Tagline */
-    .tagline {
-      margin-top: 30px;
-      margin-bottom: 40px;
-      font-size: 11px;
-      color: #ff33cc;
-      text-shadow:
-        0 0 4px #ec4899,
-        0 0 8px #ec4899;
-    }
-
-    @media (min-width: 768px) {
-      nav ul li {
-        margin: 0 16px;
-      }
-      nav ul li a {
-        font-size: 11px;
-      }
-    }
-  </style>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -191,28 +37,52 @@
   </div>
 
   <!-- WELCOME SECTION -->
-  <h2 class="section-title">WELCOME</h2>
-  <p class="body-text">
-    Like wrestling? Retro games, shows, and movies? Football?<br>
-    This is an alliance built for fans of wrestling, football, and retro gaming.<br>
-    Here you can listen to wrestling podcasts, watch football shows, and play
-    throwback-style games—all in one place.<br>
-    Welcome to the Retro Rumble Gridiron Alliance.
-  </p>
+  <section class="section">
+    <h2 class="section-title">WELCOME</h2>
+    <p class="body-text">
+      Like wrestling? Retro games, shows, and movies? Football?
+      This is an alliance built for fans of wrestling, football, and retro gaming.
+      Here you can listen to wrestling podcasts, watch football shows, and play
+      throwback-style games—all in one place. Welcome to the Retro Rumble
+      Gridiron Alliance.
+    </p>
+  </section>
 
   <!-- PLAY SECTION -->
-  <h2 class="play-title" id="play">PLAY</h2>
-  <div class="play-section">
-    <button class="play-btn">
-      PLAY RRGA FOOTBALL
-    </button>
+  <section class="section" id="play">
+    <h2 class="section-title">PLAY</h2>
+    <div class="play-section">
+      <button class="play-btn">
+        PLAY RRGA FOOTBALL
+      </button>
 
-    <div class="game-frame">
-      <p class="placeholder-text">
-        Game window placeholder. UFL / RRGA football will appear here once the web build is ready.
-      </p>
+      <div class="game-frame">
+        <p class="placeholder-text">
+          Game window placeholder. UFL / RRGA football will appear here once the web build is ready.
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- PODCASTS PREVIEW -->
+  <section class="section">
+    <h2 class="section-title">PODCASTS</h2>
+    <p class="body-text">
+      Dive into wrestling talk with shows like <strong>Booking Like A Mark</strong> and more.
+      Rebook storylines, fantasy-book new matches, and hear from passionate fans and creators.
+    </p>
+    <a href="podcasts.html" class="section-link-btn">GO TO PODCASTS</a>
+  </section>
+
+  <!-- WATCH PREVIEW -->
+  <section class="section">
+    <h2 class="section-title">WATCH</h2>
+    <p class="body-text">
+      Catch alt-football and retro-themed shows, breakdowns, and watch-alongs.
+      From UFL vibes to classic football moments, this is where the gridiron meets retro.
+    </p>
+    <a href="watch.html" class="section-link-btn">GO TO WATCH PAGE</a>
+  </section>
 
   <!-- TAGLINE -->
   <h2 class="tagline">
