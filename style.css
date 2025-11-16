@@ -1,211 +1,130 @@
-/* === GLOBAL SETTINGS === */
-* {
-    box-sizing: border-box;
+/* --------------------
+   FONTS
+--------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Pixel headers */
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-top: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00aaff;
 }
+
+/* Typewriter paragraphs */
+p {
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    color: white;
+    line-height: 1.4;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* --------------------
+   BODY
+--------------------- */
 
 body {
+    background-color: #000;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* pure black */
-    color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    text-align: left;
+    text-align: center;
 }
 
-/* Centered layout helper for big blocks */
-.section,
-.main-image,
-.tagline {
-    width: 85%;
-    max-width: 700px;
-    margin: 0 auto;
-}
+/* --------------------
+   NAVBAR
+--------------------- */
 
-/* === NAVIGATION BAR === */
 nav {
-    background-color: #000000;
-    border-bottom: 2px solid #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
     padding: 16px 0;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    text-align: center;
+    background: #020202;
+    border-bottom: 2px solid #111;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 12px;
-}
-
-nav ul li a {
+nav a {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
     text-decoration: none;
-    color: #cccccc;
-    font-size: 11px;
-    padding: 8px 14px;
-    border-radius: 16px;
-    transition: 0.25s;
-}
-
-/* Hover - hot pink */
-nav ul li a:hover {
-    background-color: #ff66cc;
-    color: #000000;
-}
-
-/* Active - lime green */
-nav ul li a.active {
-    background-color: #39ff14;
-    color: #000000;
-    border-radius: 18px;
-}
-
-/* === HEADINGS: pixel font, white with neon blue glow === */
-h1, h2, h3 {
-    font-family: "Press Start 2P", monospace;
-    color: #ffffff;
-    text-shadow:
-        0 0 4px #3b82f6,
-        0 0 8px #3b82f6,
-        0 0 12px #3b82f6;
-    letter-spacing: 2px;
-}
-
-/* Main site title */
-.title {
-    margin-top: 32px;
-    font-size: 18px;
-    line-height: 1.7;
-    text-align: center;
-}
-
-/* === MAIN IMAGE === */
-.main-image {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.main-image img {
-    width: 100%;
-    max-width: 500px;
-    border: 3px solid #1e4bff;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(30, 75, 255, 0.5);
-}
-
-/* === SECTION HEADINGS === */
-.section-title {
-    margin-top: 40px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    text-align: center;
-}
-
-/* Paragraph text – basic font, left aligned */
-.body-text {
-    line-height: 1.7;
-    font-size: 14px;
-    margin: 0 auto 10px auto;
-}
-
-/* === PLAY SECTION === */
-.play-section {
-    margin-bottom: 40px;
-}
-
-.play-btn {
-    display: inline-block;
-    background-color: #000000;
-    border: 3px solid #3b82f6;
-    padding: 12px 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-weight: 700;
-    color: #ffffff;
     font-size: 12px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.25s;
-    text-transform: uppercase;
-}
-
-.play-btn:hover {
-    background-color: #3b82f6;
-    color: #000000;
-}
-
-.game-frame {
-    width: 100%;
-    max-width: 500px;
-    height: 260px;
-    margin: 20px auto 0 auto;
-    border: 2px solid #3b82f6;
-    border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.2s ease;
 }
 
-.placeholder-text {
-    color: #aaaaaa;
-    font-size: 10px;
+/* Normal icon */
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    image-rendering: pixelated;
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover — hot pink neon */
+nav a:hover .nav-icon {
+    filter: drop-shadow(0 0 6px #ff2ae8) drop-shadow(0 0 10px #ff2ae8);
+    transform: scale(1.1);
+}
+
+/* Active page — lime green glow */
+nav a.active .nav-icon {
+    filter: drop-shadow(0 0 6px #39ff14)
+            drop-shadow(0 0 12px #39ff14)
+            drop-shadow(0 0 18px #39ff14);
+    transform: scale(1.15);
+}
+
+nav a.active {
+    color: #39ff14;
+}
+
+/* --------------------
+   CONTENT BOX
+--------------------- */
+
+.content-box {
+    margin: 40px auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 900px;
+    border: 3px solid #0055ff;
+    border-radius: 12px;
+    background: rgba(0, 0, 40, 0.5);
+    box-shadow: 0 0 12px #0040ff;
+}
+
+/* --------------------
+   FOOTER TAGLINE
+--------------------- */
+
+footer {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    margin-top: 40px;
+    padding: 25px 0;
+    background: #000;
+    color: white;
+    line-height: 1.8;
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
 
-/* === SECTION LINK BUTTONS (Podcasts / Watch) === */
-.section-link-btn {
-    display: inline-block;
-    margin-top: 12px;
-    margin-bottom: 24px;
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: 2px solid #3b82f6;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 600;
-    background-color: transparent;
-    transition: 0.25s;
-    text-transform: uppercase;
-}
+    background-clip: text;
+    -webkit-background-clip: text;
 
-.section-link-btn:hover {
-    background-color: #3b82f6;
-    color: #000000;
-}
+    /* Lime → blue gradient */
+    background-image: linear-gradient(#39ff14, #00aaff);
+    -webkit-text-fill-color: transparent;
 
-/* === TAGLINE === */
-.tagline {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    font-size: 12px;
-    color: #ff33cc;
-    text-shadow:
-        0 0 4px #ec4899,
-        0 0 8px #ec4899;
-    text-align: center;
-}
-
-/* === RESPONSIVE UPGRADE === */
-@media (min-width: 768px) {
-    nav ul li {
-        margin: 0 18px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    .title {
-        font-size: 22px;
-    }
-
-    .body-text {
-        font-size: 15px;
-    }
+    text-shadow: 0 0 8px #39ff14;
 }
